@@ -1,0 +1,17 @@
+class Solution {
+    public int[] runningSum(int[] nums) {
+        int n = nums.length;   // Get the length of the input array
+        int[] runningSum = new int[n];  // Initialize an array to store the running sum
+
+          // Outer loop for iterateing through each index of the array
+        for (int i = 0; i < n; i++) {
+            int sum = 0;   // Initializing sum for the current index
+             // Inner loop for calculating the sum of elements from index 0 to i
+            for (int j = 0; j <= i; j++) {
+                sum += nums[j];  // Add the current element to the sum
+            }
+            runningSum[i] = sum;  // Storing the calculated sum in the runningSum array
+        }
+        return runningSum;  // Returning the final runningSum array
+    }
+}
