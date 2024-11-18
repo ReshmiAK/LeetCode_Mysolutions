@@ -1,0 +1,24 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+             // Sort the array of strings
+        Arrays.sort(strs);
+
+           // First string in the sorted array
+        String str1 = strs[0];
+           // Last string in the sorted array
+        String str2 = strs[strs.length - 1];
+
+        int index = 0;
+           // Compare characters of the first and last string until they differ
+        while (index < str1.length()) {
+            if (str1.charAt(index) == str2.charAt(index)) {
+                index++;     // Move to the next character if they match
+            } else {
+                break;      // Stop the loop if characters differ
+            }
+        }
+
+           // Return the common prefix or an empty string if none exists
+        return index == 0 ? "" : str1.substring(0, index);
+    }
+}
