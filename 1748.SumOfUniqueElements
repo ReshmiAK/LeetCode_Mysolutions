@@ -1,0 +1,19 @@
+class Solution {
+    public int sumOfUnique(int[] nums) {
+     //creating a new array (0 to 100)
+    int[] freq= new int[101];
+    // a sum variable to store the sum of unique elements 
+    int sum=0;
+    //loop that iterates the given elements and storing their frequencies 
+    for(int num:nums){
+        freq[num]++;
+    }
+    //loop to find the unique element using freq data and adding their unique sum
+    for (int i=0; i<freq.length;i++){
+        if(freq[i]==1){
+            sum+=i;
+        }
+    }
+    return sum;
+    }
+}
