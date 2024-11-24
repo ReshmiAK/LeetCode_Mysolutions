@@ -1,0 +1,20 @@
+class Solution {
+    public int thirdMax(int[] nums) {
+    // sorting the given array
+      Arrays.sort(nums);
+      int n= nums.length;
+      int count=1; // count of distinct elements count
+
+      for(int i=n-1;i>=1;i--){ // loop running from last element towards the first element
+        if(nums[i]!=nums[i-1]){ // current element not equal to previous element
+            count++;
+        }
+        if(count==3){ // as we need 3rd max element , when count=3 return the third element
+            return nums[i-1];
+        }
+        
+      }
+      return nums[n-1];
+
+    }
+}
